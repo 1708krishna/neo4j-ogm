@@ -27,15 +27,15 @@ public class SchemaRelationshipLoadClauseBuilderTest {
         builder.build("r", "FRIEND_OF", 0);
     }
 
-    /*@Test
+    @Test
     public void buildClauseWithDepthOne() {
         String clause = builder.build("r", "FOUNDED", 1);
         assertThat(clause).isEqualToIgnoringWhitespace(" RETURN r,n,m");
-    }*/
+    }
 
     @Test
     public void buildClauseWithDepthTwo() {
-        String clause = builder.build("r", "FOUNDED", 1);
+        String clause = builder.build("r", "FOUNDED", 2);
 
         assertThat(clause).isEqualToIgnoringWhitespace(
             " RETURN r,n,"
