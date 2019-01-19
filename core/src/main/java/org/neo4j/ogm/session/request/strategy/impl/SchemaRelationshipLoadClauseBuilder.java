@@ -53,10 +53,10 @@ public class SchemaRelationshipLoadClauseBuilder extends AbstractSchemaLoadClaus
         // one step is going from r to start and end node so pass depth - 1
         sb.append(",n");
         Node start = relationship.start();
-        expand(sb, "n", start, depth);
+        expand(sb, "n", start, depth-1);
         sb.append(",m");
         Node end = relationship.other(start);
-        expand(sb, "m", end, depth);
+        expand(sb, "m", end, depth-1);
 
         return sb.toString();
     }
